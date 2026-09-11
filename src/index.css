@@ -1,0 +1,1056 @@
+/* ==========================================================================
+   KnowSpace Standalone Promotional Website Design Tokens & Style System
+   Supports: Geek Dark (Default), Warm Light, and E-ink Paper Themes
+   ========================================================================== */
+
+:root,
+.theme-dark {
+  --bg-main: #070a12;
+  --bg-surface: #0c1222;
+  --bg-card: rgba(15, 23, 42, 0.88);
+  --bg-card-hover: rgba(30, 41, 59, 0.95);
+  --bg-elevated: #1e293b;
+  --text-primary: #ffffff;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --border-subtle: rgba(255, 255, 255, 0.12);
+  --border-strong: rgba(255, 255, 255, 0.24);
+  --accent-cyan: #38bdf8;
+  --accent-indigo: #818cf8;
+  --accent-emerald: #34d399;
+  --accent-amber: #fbbf24;
+  --glow-color: rgba(56, 189, 248, 0.25);
+  --hero-mesh: radial-gradient(at 20% 20%, rgba(99, 102, 241, 0.26) 0px, transparent 50%),
+               radial-gradient(at 80% 0%, rgba(56, 189, 248, 0.24) 0px, transparent 50%),
+               radial-gradient(at 50% 80%, rgba(16, 185, 129, 0.16) 0px, transparent 50%);
+  --navbar-bg: rgba(7, 10, 18, 0.88);
+  --shadow-stage: 0 32px 80px -16px rgba(0, 0, 0, 0.85), 0 0 0 1px rgba(255, 255, 255, 0.14);
+  --code-bg: #090e1a;
+}
+
+.theme-light {
+  --bg-main: #fbf9f4;
+  --bg-surface: #f3efe6;
+  --bg-card: rgba(255, 255, 255, 0.95);
+  --bg-card-hover: #ffffff;
+  --bg-elevated: #e6dfcf;
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  --border-subtle: rgba(0, 0, 0, 0.1);
+  --border-strong: rgba(0, 0, 0, 0.2);
+  --accent-cyan: #0284c7;
+  --accent-indigo: #4338ca;
+  --accent-emerald: #047857;
+  --accent-amber: #b45309;
+  --glow-color: rgba(2, 132, 199, 0.16);
+  --hero-mesh: radial-gradient(at 20% 20%, rgba(217, 119, 6, 0.16) 0px, transparent 50%),
+               radial-gradient(at 80% 10%, rgba(2, 132, 199, 0.14) 0px, transparent 50%);
+  --navbar-bg: rgba(251, 249, 244, 0.9);
+  --shadow-stage: 0 24px 60px -12px rgba(90, 70, 40, 0.18), 0 0 0 1px rgba(0, 0, 0, 0.12);
+  --code-bg: #e8e2d4;
+}
+
+.theme-eink {
+  --bg-main: #f4f3ee;
+  --bg-surface: #eae8e1;
+  --bg-card: #faf9f5;
+  --bg-card-hover: #ffffff;
+  --bg-elevated: #dedad0;
+  --text-primary: #000000;
+  --text-secondary: #262626;
+  --text-muted: #4a4a4a;
+  --border-subtle: #c5c1b2;
+  --border-strong: #8c8676;
+  --accent-cyan: #1a1a1a;
+  --accent-indigo: #262626;
+  --accent-emerald: #111111;
+  --accent-amber: #333333;
+  --glow-color: rgba(0, 0, 0, 0.05);
+  --hero-mesh: none;
+  --navbar-bg: rgba(244, 243, 238, 0.96);
+  --shadow-stage: 0 16px 40px -8px rgba(0, 0, 0, 0.16), 0 0 0 1px #8c8676;
+  --code-bg: #e0ded4;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+::selection {
+  background: rgba(56, 189, 248, 0.3);
+  color: inherit;
+}
+
+html {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  color: var(--text-primary);
+  background-color: var(--bg-main);
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Anchor jumps must clear the 68px sticky nav, otherwise the section heading
+   lands underneath it. Pairs with the scroll-spy implemented in Navbar.tsx. */
+section[id] {
+  scroll-margin-top: 84px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: var(--bg-main);
+  line-height: 1.6;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+code, pre, .font-mono {
+  font-family: 'Fira Code', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "PingFang SC", "Microsoft YaHei", monospace;
+}
+
+/* Background Atmospheric Mesh */
+.ambient-mesh {
+  position: fixed;
+  inset: 0;
+  background-image: var(--hero-mesh);
+  pointer-events: none;
+  z-index: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Glassmorphism Containers */
+.glass-panel {
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.glass-panel:hover {
+  border-color: var(--border-strong);
+}
+
+.glass-interactive {
+  cursor: pointer;
+}
+
+.glass-interactive:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px -8px var(--glow-color);
+}
+
+/* Navbar */
+.sticky-nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--navbar-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-subtle);
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+/* 1600px, not 1360px: the brand block and the controls block are both
+   flex-shrink:0, so the content box has to fit the widest language.
+   Measured need — zh 1326px, en 1507px of content width. At the old 1360px cap
+   the content box was locked to 1312px no matter how wide the screen was, which
+   squeezed the nav on every viewport (14px short in zh, 195px in en). */
+.sticky-nav-inner {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+/* The brand block and the controls block both refuse to shrink, so this middle
+   block absorbs any shortfall. overflow:hidden rather than auto — the inner
+   anchor strip owns the sideways scrolling (see .nav-secondary-links below),
+   and two nested scroll containers would fight each other. */
+.nav-links-container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  white-space: nowrap;
+  flex-shrink: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+
+/* The section anchors give way first — by scrolling sideways, not by vanishing.
+   "Features" and "Docs" are primary navigation and must stay visible at every
+   width, whereas the anchors are a shortcut (the footer links to the same
+   targets). The strip only scrolls once it actually runs out of room, so wide
+   layouts are completely unaffected. */
+.nav-secondary-links {
+  min-width: 0;
+  flex-shrink: 1;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.nav-secondary-links::-webkit-scrollbar {
+  display: none;
+}
+
+.nav-link-btn {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 6px 4px;
+  white-space: nowrap;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.nav-link-btn:hover,
+.nav-link-btn.active {
+  color: var(--accent-cyan);
+  border-bottom-color: var(--accent-cyan);
+}
+
+.nav-controls-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+/* Language-aware nav fallbacks.
+   English labels run ~180px wider than Chinese, so a single threshold sized for
+   English would squeeze Chinese users on screens where the Chinese nav fits
+   easily (zh needs a 1374px viewport, en needs 1555px). Thresholds below are
+   derived from measured content widths, not guessed:
+     zh — brand 265 + links 548 + controls 481 + gaps = 1326px content
+     en — brand 265 + links 639 + controls 571 + gaps = 1507px content
+   The command-palette capsule is the widest non-essential item (157px zh /
+   201px en), so its label and shortcut chip fold first; the Search icon and its
+   title attribute remain, so the entry point is never lost. */
+@media (max-width: 1560px) {
+  html[lang^="en"] .nav-cmd-label,
+  html[lang^="en"] .nav-cmd-kbd {
+    display: none;
+  }
+
+  html[lang^="en"] .nav-links-container {
+    gap: 12px;
+  }
+
+  html[lang^="en"] .nav-controls-container {
+    gap: 8px;
+  }
+
+  html[lang^="en"] .sticky-nav-inner {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 1380px) {
+  html[lang^="zh"] .nav-cmd-label,
+  html[lang^="zh"] .nav-cmd-kbd {
+    display: none;
+  }
+}
+
+/* Narrow screens: even with the palette capsule reduced, the brand and control
+   blocks together outweigh what is left, so the anchors fold and the bar itself
+   becomes the scroll container — that way "Features"/"Docs" stay reachable
+   instead of being clipped to zero width. A real mobile menu is still the
+   proper fix and remains outstanding. */
+@media (max-width: 1100px) {
+  .nav-secondary-links {
+    display: none !important;
+  }
+
+  .nav-links-container {
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .nav-links-container::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Phone widths: reclaim ~126px by dropping the version badge and the language
+   label. The Languages icon keeps its title attribute, so the toggle is still
+   discoverable, and this is what lets "Features"/"Docs" fit without scrolling.
+   The badge carries an inline display:flex, so !important is required here. */
+@media (max-width: 900px) {
+  .sticky-nav .badge-pill {
+    display: none !important;
+  }
+
+  .nav-lang-label {
+    display: none;
+  }
+}
+
+/* Badges and Chips */
+.badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 1;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  letter-spacing: 0.01em;
+}
+
+.badge-pill svg {
+  flex-shrink: 0;
+}
+
+.badge-pill.primary {
+  border-color: rgba(56, 189, 248, 0.4);
+  background: rgba(56, 189, 248, 0.1);
+  color: var(--accent-cyan);
+}
+
+/* Buttons */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.25;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%);
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 8px 24px -4px rgba(56, 189, 248, 0.4);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+  text-decoration: none;
+  user-select: none;
+}
+
+.btn-primary svg {
+  flex-shrink: 0;
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 30px -4px rgba(56, 189, 248, 0.6);
+  opacity: 0.95;
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 22px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.25;
+  border-radius: 12px;
+  background: var(--bg-card);
+  color: var(--text-primary);
+  border: 1px solid var(--border-strong);
+  cursor: pointer;
+  text-decoration: none;
+  user-select: none;
+  transition: background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+}
+
+.btn-secondary svg {
+  flex-shrink: 0;
+}
+
+.btn-secondary:hover {
+  background: var(--bg-elevated);
+  transform: translateY(-1px);
+}
+
+/* Bento Grid */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 20px;
+}
+
+.bento-col-8 { grid-column: span 8; }
+.bento-col-4 { grid-column: span 4; }
+.bento-col-6 { grid-column: span 6; }
+.bento-col-12 { grid-column: span 12; }
+
+@media (max-width: 1024px) {
+  .bento-col-8, .bento-col-4, .bento-col-6 {
+    grid-column: span 12;
+  }
+}
+
+/* Interactive Stage Showcase */
+.showcase-window {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-stage);
+  border: 1px solid var(--border-strong);
+  background: var(--bg-surface);
+  position: relative;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* Diff highlights - Theme Adaptive for optimal contrast */
+.diff-del {
+  background-color: rgba(239, 68, 68, 0.22);
+  color: #fca5a5;
+  font-weight: 500;
+}
+
+.diff-ins {
+  background-color: rgba(16, 185, 129, 0.22);
+  color: #6ee7b7;
+  font-weight: 500;
+}
+
+.theme-light .diff-del {
+  background-color: rgba(239, 68, 68, 0.14);
+  color: #b91c1c;
+}
+
+.theme-light .diff-ins {
+  background-color: rgba(16, 185, 129, 0.16);
+  color: #047857;
+}
+
+.theme-eink .diff-del {
+  background-color: #e5e0d4;
+  color: #000000;
+  text-decoration: line-through;
+}
+
+.theme-eink .diff-ins {
+  background-color: #faf9f5;
+  color: #000000;
+  font-weight: 700;
+  border-left: 3px solid #000000;
+}
+
+/* ==========================================================================
+   Cyberpunk & Sci-Fi Futuristic Design System (HUD, Brackets, Glows)
+   ========================================================================== */
+
+/* Glowing Neon Gradient Text */
+.cyber-text-gradient {
+  background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #34d399 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 30px rgba(56, 189, 248, 0.35);
+}
+
+.theme-light .cyber-text-gradient {
+  background: linear-gradient(135deg, #0284c7 0%, #4f46e5 50%, #059669 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
+}
+
+.theme-eink .cyber-text-gradient {
+  background: #121212;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
+}
+
+/* Cyber Corner Brackets on cards - Removed as requested */
+.cyber-bracket-container {
+  position: relative;
+}
+
+/* Radar Ping / Pulsing Core Indicator */
+.radar-pulse-dot {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 8px;
+  height: 8px;
+}
+
+.radar-pulse-dot::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: currentColor;
+  animation: radar-ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.radar-pulse-dot::after {
+  content: '';
+  position: relative;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+@keyframes radar-ping {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  70%, 100% {
+    transform: scale(2.8);
+    opacity: 0;
+  }
+}
+
+/* Laser Scanline for Window Showcase */
+.cyber-scanline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, rgba(56, 189, 248, 0.8) 50%, transparent 100%);
+  opacity: 0.6;
+  pointer-events: none;
+  animation: scanline 4s linear infinite;
+  z-index: 5;
+}
+
+@keyframes scanline {
+  0% {
+    top: 0%;
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.8;
+  }
+  85% {
+    opacity: 0.8;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}
+
+/* Card 3D Tilt and Interactive Glow */
+.cyber-card-tilt {
+  transition: transform 0.25s cubic-bezier(0.2, 0, 0, 1), box-shadow 0.25s cubic-bezier(0.2, 0, 0, 1), border-color 0.25s ease;
+}
+
+.cyber-card-tilt:hover {
+  transform: translateY(-4px) scale(1.008);
+  box-shadow: 0 20px 40px -12px var(--glow-color), 0 0 0 1px var(--border-strong);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-main);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bg-elevated);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-strong);
+}
+
+/* ==========================================================================
+   Responsive Adaptation
+   Docs layout / diff grid / small-screen tuning.
+   Note: many components still use inline styles, which media queries cannot
+   override — the !important rules below deliberately target those cases.
+   ========================================================================== */
+
+.docs-layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.docs-sidebar {
+  padding: 20px;
+  position: sticky;
+  top: 90px;
+  max-height: calc(100vh - 120px);
+  display: flex;
+  flex-direction: column;
+}
+
+.docs-content {
+  padding: 36px;
+}
+
+.diff-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* Tablet — stack the docs sidebar above the content area */
+@media (max-width: 900px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  .docs-layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .docs-sidebar {
+    position: static;
+    max-height: 340px;
+  }
+
+  .docs-content {
+    padding: 24px 20px;
+  }
+
+  .sticky-nav-inner {
+    gap: 10px;
+    padding: 0 14px;
+  }
+}
+
+/* Phone — collapse the diff comparison to a single column */
+@media (max-width: 768px) {
+  .diff-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .docs-content {
+    padding: 20px 14px;
+  }
+
+  .docs-content h2 {
+    font-size: 1.45rem !important;
+  }
+
+  section[id] {
+    padding-top: 56px !important;
+    padding-bottom: 40px !important;
+  }
+}
+
+/* ==========================================================================
+   SHA-256 verification panel (Download section)
+   Lists the published asset digests so the "verify the hash" copy is actually
+   actionable. Uses CSS variables only, so all three themes stay consistent.
+   ========================================================================== */
+
+.sha-panel {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px 28px 22px;
+}
+
+.sha-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.sha-head-main {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  flex: 1 1 300px;
+  min-width: 0;
+}
+
+.sha-repo-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: var(--accent-cyan);
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.sha-repo-link:hover {
+  text-decoration: underline;
+}
+
+.sha-assets {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.sha-assets-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.sha-tag {
+  padding: 1px 8px;
+  border-radius: 999px;
+  background: var(--bg-elevated);
+  color: var(--accent-emerald);
+  font-family: 'Fira Code', ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.sha-asset-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  padding: 9px 12px;
+  border-radius: 10px;
+  background: var(--code-bg);
+  border: 1px solid var(--border-subtle);
+}
+
+.sha-asset-meta {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex: 0 1 auto;
+  min-width: 0;
+}
+
+.sha-asset-name {
+  font-family: 'Fira Code', ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-decoration: none;
+  word-break: break-all;
+}
+
+.sha-asset-name:hover {
+  color: var(--accent-cyan);
+  text-decoration: underline;
+}
+
+.sha-asset-size {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.sha-asset-hash {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1 1 340px;
+  min-width: 0;
+}
+
+.sha-hash {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-family: 'Fira Code', ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.72rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+  word-break: break-all;
+  user-select: all;
+}
+
+.copy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  flex-shrink: 0;
+  padding: 4px 10px;
+  border-radius: 7px;
+  border: 1px solid var(--border-strong);
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
+  font-family: inherit;
+  font-size: 0.72rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.18s ease, color 0.18s ease;
+}
+
+.copy-btn:hover,
+.copy-btn:focus-visible {
+  border-color: var(--accent-emerald);
+  color: var(--accent-emerald);
+  outline: none;
+}
+
+.sha-cmd {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+  margin-top: 2px;
+}
+
+.sha-cmd-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.sha-cmd-code {
+  flex: 1 1 300px;
+  min-width: 0;
+  padding: 5px 10px;
+  border-radius: 7px;
+  background: var(--code-bg);
+  border: 1px solid var(--border-subtle);
+  font-family: 'Fira Code', ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.73rem;
+  color: var(--text-primary);
+  word-break: break-all;
+  user-select: all;
+}
+
+.sha-footnote {
+  font-size: 0.74rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+@media (max-width: 768px) {
+  .sha-panel {
+    padding: 18px 16px;
+  }
+
+  .sha-asset-row {
+    padding: 10px;
+  }
+
+  .sha-asset-hash {
+    flex: 1 1 100%;
+  }
+
+  .copy-btn span {
+    display: none;
+  }
+
+  .copy-btn {
+    padding: 5px 7px;
+  }
+}
+
+/* ==========================================================================
+   Footer contact strip
+   Sits between the link columns and the copyright bar.
+   Left: scannable Telegram card. Right: contact channels.
+   ========================================================================== */
+
+.footer-contact {
+  max-width: 880px;
+  margin: 0 auto 28px;
+  padding: 22px 24px;
+  border-radius: 16px;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-card);
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+/* Scannable Telegram card.
+   Sizing rule: the QR occupies ~47.5% of the card's width in the source art, so a
+   240px card renders the QR at ~114px — the comfortable floor for a phone camera
+   reading a screen. This block is the primary scan path: desktop visitors scan it
+   with their phone. Mobile visitors just tap the link, so that breakpoint can be
+   smaller (see the 768px block below). Do not shrink without re-verifying that
+   ZXing still decodes the rendered size. */
+.footer-contact-qr {
+  display: block;
+  flex-shrink: 0;
+  width: 240px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 12px 30px -14px rgba(0, 0, 0, 0.45);
+  transition: transform 0.22s cubic-bezier(0.2, 0, 0, 1), border-color 0.22s ease;
+}
+
+.footer-contact-qr img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.footer-contact-qr:hover,
+.footer-contact-qr:focus-visible {
+  transform: translateY(-3px);
+  border-color: var(--accent-cyan);
+  outline: none;
+}
+
+.footer-contact-body {
+  flex: 1 1 340px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.footer-contact-main {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  min-width: 0;
+}
+
+.footer-contact-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 11px;
+  background: var(--bg-elevated);
+  color: var(--accent-cyan);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.footer-contact-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 3px;
+}
+
+.footer-contact-desc {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.footer-contact-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-contact-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Monospace matches how the site renders other technical strings
+   (asset file names, hashes) and keeps the addresses unambiguous. */
+.footer-contact-pill {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 14px;
+  border-radius: 9px;
+  border: 1px solid var(--border-strong);
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+  font-family: 'Fira Code', ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.82rem;
+  text-decoration: none;
+  transition: border-color 0.18s ease, color 0.18s ease;
+}
+
+.footer-contact-pill:hover,
+.footer-contact-pill:focus-visible {
+  border-color: var(--accent-cyan);
+  color: var(--accent-cyan);
+  outline: none;
+}
+
+.footer-contact-pill > span {
+  word-break: break-all;
+}
+
+/* Push the handle to the right edge of the pill: label left, handle right. */
+.footer-contact-handle {
+  margin-left: auto;
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.footer-contact-pill:hover .footer-contact-handle,
+.footer-contact-pill:focus-visible .footer-contact-handle {
+  color: inherit;
+}
+
+@media (max-width: 768px) {
+  .footer-contact {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+    padding: 18px 16px;
+  }
+
+  /* Stacked layout: mobile users tap the link rather than scan, so 220px is
+     plenty. min() keeps the card inside the card's padding on 320px screens. */
+  .footer-contact-qr {
+    width: min(220px, 100%);
+    margin: 0 auto;
+  }
+
+  .footer-contact-body {
+    flex: 1 1 auto;
+  }
+
+  .footer-contact-main {
+    align-items: center;
+  }
+}
+
+

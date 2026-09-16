@@ -20,25 +20,25 @@ export interface ReleaseAsset {
   url: string;
 }
 
-export const RELEASE_TAG = 'v2.0.0';
+export const RELEASE_TAG = 'v2.3.0';
 
 export const RELEASE_ASSETS: ReleaseAsset[] = [
   {
-    name: 'KnowSpace-2.0.0.msi',
-    bytes: 159752192,
-    sha256: 'fd1d2f701f9821d62441ef9df3641a6da4ce82dfb065a354cade71bdc97fa2a1',
-    url: 'https://github.com/chunxvzhang-lab/KnowSpace/releases/download/v2.0.0/KnowSpace-2.0.0.msi',
+    name: 'KnowSpace-2.3.0.msi',
+    bytes: 159784960,
+    sha256: 'e7f6c40e89713a44c2b0feda3902107f2e8b84ed4846e50363069532940cf363',
+    url: 'https://github.com/chunxvzhang-lab/KnowSpace/releases/download/v2.3.0/KnowSpace-2.3.0.msi',
   },
   {
-    name: 'KnowSpace-Setup-2.0.0.exe',
-    bytes: 147483535,
-    sha256: 'f597680c2ecb4c32b7e6aca9ed8e2ed828a001efcea2c91bbc2bcb36cf89b723',
-    url: 'https://github.com/chunxvzhang-lab/KnowSpace/releases/download/v2.0.0/KnowSpace-Setup-2.0.0.exe',
+    name: 'KnowSpace-Setup-2.3.0.exe',
+    bytes: 147507449,
+    sha256: 'bb4ce9918b84a9379f49c6c8a4eca2de3ba1fee4e2a2d34c6f53959d0515a6a8',
+    url: 'https://github.com/chunxvzhang-lab/KnowSpace/releases/download/v2.3.0/KnowSpace-Setup-2.3.0.exe',
   },
   {
     name: 'KnowSpace-win-x64-portable.zip',
-    bytes: 384005722,
-    sha256: 'ba1e2e2129a0c3846bb68d1a55483c38fe0a3edd24957522aa3f104662b2a6d8',
-    url: 'https://github.com/chunxvzhang-lab/KnowSpace/releases/download/v2.0.0/KnowSpace-win-x64-portable.zip',
+    bytes: 531654307,
+    sha256: '8e6dd26f5e5995afeef02a3639e9436cb8586908293a1d8ed28446b7650ef865',
+    url: 'https://github.com/chunxvzhang-lab/KnowSpace/releases/download/v2.3.0/KnowSpace-win-x64-portable.zip',
   },
 ];

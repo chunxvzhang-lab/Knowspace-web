@@ -20,7 +20,7 @@ export const DOCS_MODULES: DocModule[] = [
     title: '工作台全景与三段式交互架构',
     shortcut: 'Ctrl + \\',
     description: '左侧知识库目录树、中央现代化双栏分屏工作区、右侧多功能抽屉栏与底部状态栏，信息层级分明，支持随时自适应折叠。',
-    images: [{ src: './images/01-overview-workbench.webp', caption: 'KnowSpace v2.0.0 工作台界面全景' }],
+    images: [{ src: './images/01-overview-workbench.webp', caption: 'KnowSpace v2.3.0 工作台界面全景' }],
     keyPoints: ['三段式弹性布局调度', '状态栏实时统计字数与编码', 'Ctrl+\\ 一键收起左侧目录树']
   },
   {
@@ -285,16 +285,16 @@ export const DOCS_MODULES: DocModule[] = [
   {
     id: 'infinite-canvas',
     index: '28',
-    category: 'v2.0.0 旗舰',
+    category: '旗舰功能',
     title: '无限空间可视化白板 (JSON Canvas 1.0 标准)',
-    description: '突破线性思维。在无限二维空间中自由陈列 Markdown 文本卡片、嵌入笔记、网页与分组框，支持贝塞尔连线与 Minimap 鹰眼。',
+    description: '突破线性思维。在无限二维空间中自由陈列 Markdown 文本卡片、嵌入笔记、网页与分组框，支持贝塞尔连线与 Minimap 鹰眼；v2.3 起支持 F5 分镜全屏演播，沿因果拓扑顺时针完整推演闭环。',
     images: [{ src: './images/32-infinite-canvas.webp', caption: '无限空间可视化白板 (JSON Canvas 1.0)' }],
-    keyPoints: ['JSON Canvas 1.0 开放标准无锁死', '滚轮以光标为中心 10%~500% 缩放', '右上角微缩雷达鹰眼跳跃穿透']
+    keyPoints: ['JSON Canvas 1.0 开放标准无锁死', '滚轮以光标为中心 10%~500% 缩放', '右上角微缩雷达鹰眼跳跃穿透', 'F5 分镜全屏演播 · 顺时针闭环推演']
   },
   {
     id: 'canvas-extraction',
     index: '29',
-    category: 'v2.0.0 旗舰',
+    category: '旗舰功能',
     title: '白板卡片定制与逆向拓扑长文萃取',
     shortcut: '📝 导出为 Markdown',
     description: '独创逆向拓扑算法（Topological Sort），根据卡片因果连线与空间坐标，自动重构萃取为一篇层次严密的 Markdown 长文。',
@@ -304,7 +304,7 @@ export const DOCS_MODULES: DocModule[] = [
   {
     id: 'version-history',
     index: '30',
-    category: 'v2.0.0 旗舰',
+    category: '旗舰功能',
     title: '本地版本时间旅行与 Myers LCS 差异对比',
     shortcut: 'Ctrl + Shift + H',
     description: '脱离外部 Git。保存时自动在本地记录不可变轻量快照，Myers LCS 逐行双栏对比，展示 +N/-N 增删统计并支持一键无损还原。',
@@ -314,7 +314,7 @@ export const DOCS_MODULES: DocModule[] = [
   {
     id: 'hybrid-search',
     index: '31',
-    category: 'v2.0.0 旗舰',
+    category: '旗舰功能',
     title: '全库毫秒级混合检索引擎与结构化语法',
     shortcut: 'Ctrl + Shift + F',
     description: '基于高性能倒排索引，支持 tag:#标签、link:[[双链]]、"精确短语"、-排除词结构化语法，点击卡片秒级平滑定位并激发脉冲高亮。',

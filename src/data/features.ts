@@ -20,17 +20,17 @@ export const TRUST_METRICS = [
 export const BENTO_FEATURES: BentoFeature[] = [
   {
     id: 'canvas',
-    badge: 'v2.0.0 空间化认知旗舰',
+    badge: 'v2.3.0 空间化认知旗舰',
     title: '无限空间可视化白板 (JSON Canvas 1.0)',
-    description: '打破一维线性纯文本的束缚。在无限物理尺度的二维空间中自由陈列 Markdown 卡片、文档卡片与分组框；独创逆向拓扑算法，一键将零碎概念萃取为严谨的 Markdown 专著。',
+    description: '打破一维线性纯文本的束缚。在无限物理尺度的二维空间中自由陈列 Markdown 卡片、文档卡片与分组框；独创逆向拓扑算法，一键将零碎概念萃取为严谨的 Markdown 专著。v2.3 起支持分镜全屏演播，沿因果拓扑顺时针完整推演闭环。',
     image: './images/32-infinite-canvas.webp',
     colSpan: 'col-8',
-    highlights: ['JSON Canvas 1.0 开放标准', '微缩雷达鹰眼 (Minimap)', '贝塞尔平滑因果连线', '逆向拓扑萃取生成长文'],
+    highlights: ['F5 分镜全屏演播 · 顺时针闭环', 'JSON Canvas 1.0 开放标准', '微缩雷达鹰眼 (Minimap)', '贝塞尔平滑因果连线', '逆向拓扑萃取生成长文'],
     tagColor: 'cyan'
   },
   {
     id: 'history',
-    badge: 'v2.0.0 数据安全防丢',
+    badge: 'v2.3.0 数据安全防丢',
     title: '本地版本时间旅行与 Myers LCS Diff',
     description: '摆脱对外部 Git 的繁琐依赖。保存时本地静默捕获轻量级不可变快照，毫秒级逐行高精双栏对比，支持增删统计与一键安全时光倒流。',
     image: './images/34-version-history.webp',
@@ -40,7 +40,7 @@ export const BENTO_FEATURES: BentoFeature[] = [
   },
   {
     id: 'search',
-    badge: 'v2.0.0 毫秒级混合检索',
+    badge: 'v2.3.0 毫秒级混合检索',
     title: '全库混合检索与结构化语法体系',
     description: '原生支持 tag:#标签、link:[[双链]]、"严格短语" 与 -负向排除词。搜索结果直观标注章节与物理行号，点击秒级跨文档平滑导航并激发脉冲高亮。',
     image: './images/35-hybrid-vault-search.webp',

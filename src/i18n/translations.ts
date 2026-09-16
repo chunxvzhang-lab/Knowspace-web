@@ -13,11 +13,11 @@ export const zhTranslations: TranslationDictionary = {
     langToggle: 'EN / 中'
   },
   hero: {
-    pillTitle: 'SYSTEM ONLINE · KNOWSPACE v2.0.0',
+    pillTitle: 'SYSTEM ONLINE · KNOWSPACE v2.3.0',
     pillDesc: '无限空间白板 · 本地版本旅行 · 毫秒级混合检索',
     headline: '记录 · 阅读 · 连接 · 认知',
     subhead: '告别折腾 50+ 插件与配置泥潭。开箱即享纯粹 Markdown 写作、全键盘思维导图、JSON Canvas 1.0 空间白板 与 60FPS 知识星系图谱。100% 本地优先，物理事务原子落盘。',
-    ctaDownload: '免费下载 Windows 版 (v2.0.0)',
+    ctaDownload: '免费下载 Windows 版 (v2.3.0)',
     ctaDocs: '查阅 32 大模块全景画册',
     trustLocal: '100% 数据私有 · 零网络泄露',
     trustSearch: '< 15ms 倒排混合检索引擎',
@@ -50,21 +50,21 @@ export const zhTranslations: TranslationDictionary = {
     features: [
       {
         id: 'canvas',
-        badge: 'v2.0.0 空间化认知旗舰',
+        badge: 'v2.3.0 空间化认知旗舰',
         title: '无限空间可视化白板 (JSON Canvas 1.0)',
-        desc: '打破一维线性纯文本的束缚。在无限物理尺度的二维空间中自由陈列 Markdown 卡片、文档卡片与分组框；独创逆向拓扑算法，一键将零碎概念萃取为严谨的 Markdown 专著。',
-        highlights: ['JSON Canvas 1.0 开放标准', '微缩雷达鹰眼 (Minimap)', '贝塞尔平滑因果连线', '逆向拓扑萃取生成长文']
+        desc: '打破一维线性纯文本的束缚。在无限物理尺度的二维空间中自由陈列 Markdown 卡片、文档卡片与分组框；独创逆向拓扑算法，一键将零碎概念萃取为严谨的 Markdown 专著。v2.3 起支持分镜全屏演播，沿因果拓扑顺时针完整推演闭环。',
+        highlights: ['F5 分镜全屏演播 · 顺时针闭环', 'JSON Canvas 1.0 开放标准', '微缩雷达鹰眼 (Minimap)', '贝塞尔平滑因果连线', '逆向拓扑萃取生成长文']
       },
       {
         id: 'history',
-        badge: 'v2.0.0 数据安全防丢',
+        badge: 'v2.3.0 数据安全防丢',
         title: '本地版本时间旅行与 Myers LCS Diff',
         desc: '摆脱对外部 Git 的繁琐依赖。保存时本地静默捕获轻量级不可变快照，毫秒级逐行高精双栏对比，支持增删统计与一键安全时光倒流。',
         highlights: ['Side-by-Side 双栏对比', 'Myers LCS 行级算法', '实时增删统计徽章', '一键安全无损还原']
       },
       {
         id: 'search',
-        badge: 'v2.0.0 毫秒级混合检索',
+        badge: 'v2.3.0 毫秒级混合检索',
         title: '全库混合检索与结构化语法体系',
         desc: '原生支持 tag:#标签、link:[[双链]]、"严格短语" 与 -负向排除词。搜索结果直观标注章节与物理行号，点击秒级跨文档平滑导航并激发脉冲高亮。',
         highlights: ['tag:# 与 link:[[ 结构化语法', '跨文档毫秒级高亮脉冲', '快捷语法辅助芯片 (Chips)', '单篇/全库双模式切换']
@@ -153,7 +153,7 @@ export const zhTranslations: TranslationDictionary = {
   interactive: {
     badge: '动手试玩',
     title: '在线交互实验室：未下载，先体验',
-    desc: '点击下方沙盒，直接在浏览器中体验 KnowSpace v2.0.0 的独创核心逻辑。',
+    desc: '点击下方沙盒，直接在浏览器中体验 KnowSpace v2.3.0 的独创核心逻辑。',
     tabCanvas: '① JSON Canvas 拖拽与逆向萃取',
     tabDiff: '② Myers LCS 差异对比滑块',
     tabSearch: '③ 结构化检索引擎演练',
@@ -224,7 +224,7 @@ export const zhTranslations: TranslationDictionary = {
     title: '为什么选择 KnowSpace？',
     desc: '无需在“受制于云端”与“陷入复杂插件配置”之间妥协。',
     thDimension: '核心考量维度',
-    thKnowSpace: 'KnowSpace (v2.0.0)',
+    thKnowSpace: 'KnowSpace (v2.3.0)',
     badgeOotb: '开箱即用',
     rows: [
       {
@@ -305,11 +305,11 @@ export const zhTranslations: TranslationDictionary = {
       '无管理员权限设备即开即用',
       'U 盘随身移动办公利器'
     ],
-    zipBtn: '下载绿色便携版 (.zip · ~366 MB)',
+    zipBtn: '下载绿色便携版 (.zip · ~507 MB)',
     zipNote: '直接解压运行 KnowSpace.exe',
     shaTitle: 'SHA-256 完整性哈希校验',
     shaDesc: '下载后可用系统自带 PowerShell 计算文件哈希，与下方官方值逐字比对，确认安装包未被篡改',
-    shaAssetsTitle: 'v2.0.0 官方资产哈希',
+    shaAssetsTitle: 'v2.3.0 官方资产哈希',
     shaCopy: '复制',
     shaCopied: '已复制',
     shaCmdLabel: '校验命令',
@@ -401,7 +401,7 @@ export const zhTranslations: TranslationDictionary = {
     navDocs: '📚 打开 32 大模块全景画册与文档手册',
     navHome: '🏠 返回官方独立宣传站首页',
     navInteractive: '🕹️ 体验在线交互实验室 (Canvas & Diff)',
-    downloadMsi: '📦 下载 Windows MSI 自动化安装包 (v2.0.0)',
+    downloadMsi: '📦 下载 Windows MSI 自动化安装包 (v2.3.0)',
     downloadZip: '💼 下载 Windows 绿色便携版 (.zip)',
     hintEsc: '按 ESC 键退出命令中枢'
   }
@@ -420,11 +420,11 @@ export const enTranslations: TranslationDictionary = {
     langToggle: '中 / EN'
   },
   hero: {
-    pillTitle: 'SYSTEM ONLINE · KNOWSPACE v2.0.0',
+    pillTitle: 'SYSTEM ONLINE · KNOWSPACE v2.3.0',
     pillDesc: 'Infinite Spatial Canvas · Version Time Travel · Inverted Hybrid Search',
     headline: 'Record · Read · Connect · Know',
     subhead: 'Escape the endless trap of tweaking 50+ plugins. Enjoy pure out-of-the-box Markdown, keyboard-first mind maps, JSON Canvas 1.0 spatial whiteboard, and 60FPS knowledge graph. 100% Local-first with atomic physical persistence.',
-    ctaDownload: 'Free Download for Windows (v2.0.0)',
+    ctaDownload: 'Free Download for Windows (v2.3.0)',
     ctaDocs: 'Explore 32-Module Illustrated Manual',
     trustLocal: '100% Local-First · Zero Cloud Leaks',
     trustSearch: '< 15ms Inverted Hybrid Search',
@@ -457,21 +457,21 @@ export const enTranslations: TranslationDictionary = {
     features: [
       {
         id: 'canvas',
-        badge: 'v2.0.0 Spatial Cognitive Flagship',
+        badge: 'v2.3.0 Spatial Cognitive Flagship',
         title: 'Infinite Spatial Whiteboard (JSON Canvas 1.0)',
-        desc: 'Escape linear 1D text constraints. Arrange Markdown cards, documents, and groups freely in 2D space. Unique reverse topological synthesis converts scattered nodes into structured monographs.',
-        highlights: ['JSON Canvas 1.0 Open Standard', 'Radar Minimap View', 'Smooth Bezier Connectors', 'Reverse Topological Markdown Synthesis']
+        desc: 'Escape linear 1D text constraints. Arrange Markdown cards, documents, and groups freely in 2D space. Unique reverse topological synthesis converts scattered nodes into structured monographs. Since v2.3, a full-screen storyboard presentation walks the causal topology clockwise through complete cycles.',
+        highlights: ['F5 Storyboard Presentation · Clockwise Cycle', 'JSON Canvas 1.0 Open Standard', 'Radar Minimap View', 'Smooth Bezier Connectors', 'Reverse Topological Markdown Synthesis']
       },
       {
         id: 'history',
-        badge: 'v2.0.0 Data Safety Guarantee',
+        badge: 'v2.3.0 Data Safety Guarantee',
         title: 'Local Version Time Travel & Myers LCS Diff',
         desc: 'Eliminate complex Git dependencies. Silently captures lightweight immutable snapshots on save. Real-time side-by-side diff with line stats and instant safe time travel.',
         highlights: ['Side-by-Side Dual Pane Diff', 'Myers LCS Line-Level Algorithm', 'Real-Time Change Badges', 'One-Click Safe Reversion']
       },
       {
         id: 'search',
-        badge: 'v2.0.0 Millisecond Hybrid Search',
+        badge: 'v2.3.0 Millisecond Hybrid Search',
         title: 'Vault Hybrid Search & Structured Syntax',
         desc: 'Native support for tag:#tag, link:[[wikilink]], "exact phrase" and -negation. Search results indicate headings and line numbers with smooth cross-document pulse highlight.',
         highlights: ['tag:# and link:[[ Syntax', 'Cross-Doc Millisecond Pulse', 'Quick Syntax Chips', 'Single/Vault Dual Mode']
@@ -560,7 +560,7 @@ export const enTranslations: TranslationDictionary = {
   interactive: {
     badge: 'Interactive Playground',
     title: 'Interactive Lab: Try Before Download',
-    desc: 'Interact with the sandboxes below to experience the unique core mechanisms of KnowSpace v2.0.0 directly in your browser.',
+    desc: 'Interact with the sandboxes below to experience the unique core mechanisms of KnowSpace v2.3.0 directly in your browser.',
     tabCanvas: '① JSON Canvas Drag & Synthesis',
     tabDiff: '② Myers LCS Diff Comparison',
     tabSearch: '③ Structured Search Playground',
@@ -631,7 +631,7 @@ export const enTranslations: TranslationDictionary = {
     title: 'Why Choose KnowSpace?',
     desc: 'No need to compromise between cloud lock-in and endless plugin tinkering.',
     thDimension: 'Key Consideration',
-    thKnowSpace: 'KnowSpace (v2.0.0)',
+    thKnowSpace: 'KnowSpace (v2.3.0)',
     badgeOotb: 'Out-of-the-Box',
     rows: [
       {
@@ -712,11 +712,11 @@ export const enTranslations: TranslationDictionary = {
       'Instant access on corporate machines without admin rights',
       'Ideal portable toolkit for mobile USB workflows'
     ],
-    zipBtn: 'Download Portable ZIP (.zip · ~366 MB)',
+    zipBtn: 'Download Portable ZIP (.zip · ~507 MB)',
     zipNote: 'Extract and run KnowSpace.exe directly',
     shaTitle: 'SHA-256 Integrity Hash Verification',
     shaDesc: 'After downloading, compute the file hash with the built-in PowerShell and compare it character by character with the official values below to confirm the installer has not been tampered with',
-    shaAssetsTitle: 'Official v2.0.0 Asset Hashes',
+    shaAssetsTitle: 'Official v2.3.0 Asset Hashes',
     shaCopy: 'Copy',
     shaCopied: 'Copied',
     shaCmdLabel: 'Verification command',
@@ -808,7 +808,7 @@ export const enTranslations: TranslationDictionary = {
     navDocs: '📚 Open 32-Module Illustrated Manual',
     navHome: '🏠 Return to Promotional Landing Home',
     navInteractive: '🕹️ Experience Online Lab (Canvas & Diff)',
-    downloadMsi: '📦 Download Windows MSI Installer (v2.0.0)',
+    downloadMsi: '📦 Download Windows MSI Installer (v2.3.0)',
     downloadZip: '💼 Download Windows Portable ZIP (.zip)',
     hintEsc: 'Press ESC to exit command palette'
   }

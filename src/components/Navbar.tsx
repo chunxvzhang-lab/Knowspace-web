@@ -114,7 +114,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
           <span className="badge-pill primary" style={{ display: 'flex', alignItems: 'center', gap: 5, lineHeight: 1, flexShrink: 0 }}>
             <span style={{ width: 6, height: 6, borderRadius: '50%', background: 'currentColor', flexShrink: 0 }} />
-            v2.0.0
+            v2.3.0
           </span>
         </div>
 

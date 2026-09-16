@@ -184,7 +184,7 @@ export const Hero: React.FC<HeroProps> = ({ currentTheme, setTheme, onGoToDocs }
             <span style={{ width: 11, height: 11, borderRadius: '50%', background: '#ef4444', display: 'inline-block' }} />
             <span style={{ width: 11, height: 11, borderRadius: '50%', background: '#f59e0b', display: 'inline-block' }} />
             <span style={{ width: 11, height: 11, borderRadius: '50%', background: '#10b981', display: 'inline-block' }} />
-            <span style={{ marginLeft: 8, fontWeight: 700, color: 'var(--text-primary)', letterSpacing: '0.02em' }}>KnowSpace v2.0.0</span>
+            <span style={{ marginLeft: 8, fontWeight: 700, color: 'var(--text-primary)', letterSpacing: '0.02em' }}>KnowSpace v2.3.0</span>
           </div>
 
           <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
@@ -209,7 +209,7 @@ export const Hero: React.FC<HeroProps> = ({ currentTheme, setTheme, onGoToDocs }
 
           <img
             src="./screenshot.webp"
-            alt="KnowSpace v2.0.0"
+            alt="KnowSpace v2.3.0"
             style={{
               width: '100%',
               height: 'auto',
